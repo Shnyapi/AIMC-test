@@ -1,0 +1,17 @@
+.PeriodForm {
+  width: 226px;
+  padding: 10px;
+  box-shadow:  0px 0px 10px 3px rgba(50, 50, 50, 0.3);
+  border-radius: 5px;
+
+  &-title {
+    font-family: sans-serif;
+    font-size: 24px;
+    margin: 15px 0;
+  }
+
+  &-buttons{
+    display: flex;
+    justify-content: flex-end;
+  }
+}

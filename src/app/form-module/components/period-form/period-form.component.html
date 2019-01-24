@@ -1,0 +1,32 @@
+<div class="PeriodForm">
+  <form [formGroup]="reactiveForm">
+    <div class="PeriodForm-wrapper">
+      <div class="PeriodForm-form">
+        <h4 class="PeriodForm-title">Period Form</h4>
+        <mat-form-field>
+          <input matInput [min]="minDate" [matDatepicker]="picker" placeholder="Start Date" formControlName="startDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select placeholder="Period" formControlName="period">
+            <mat-option *ngFor="let period of periods" [value]="period.value">
+              {{period.valueView}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="pickerTwo" placeholder="End Date" formControlName="endDate">
+          <mat-datepicker-toggle matSuffix [for]="picker" [disabled]="true"></mat-datepicker-toggle>
+          <mat-datepicker #pickerTwo [disabled]="true"></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="PeriodForm-buttons">
+        <button mat-button [color]="'primary'" [disabled]="reactiveForm.invalid" (click)="submitForm()">Submit!</button>
+      </div>
+    </div>
+  </form>
+</div>
