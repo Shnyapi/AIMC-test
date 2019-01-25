@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PeriodFormComponent } from '@app/form-module/components/period-form/period-form.component';
-import { FormRouterModule } from '@app/form-module/router';
+import { PeriodFormComponent } from '@app/period-form-module/components/period-form/period-form.component';
+import { FormRouterModule } from '@app/period-form-module/router';
 import {
   MatNativeDateModule,
   MatFormFieldModule,
@@ -30,4 +30,4 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     { provide: MAT_DATE_LOCALE, useValue: 'ru-RU' },
   ],
 })
-export class FormModule { }
+export class PeriodFormModule { }

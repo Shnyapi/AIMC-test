@@ -1,9 +1,9 @@
-import { RouterModule, Routes, PreloadingStrategy, Route } from '@angular/router';
+import { RouterModule, Routes, PreloadingStrategy, Route, PreloadAllModules } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 // Обработчик предзагрузки модулей
-class AppCustomPreloader implements PreloadingStrategy {
+export class AppCustomPreloader implements PreloadingStrategy {
   preload(route: Route, load: Function): Observable<any> {
     return route.data && route.data.preload ? load() : of(null);
   }
@@ -11,7 +11,7 @@ class AppCustomPreloader implements PreloadingStrategy {
 
 const routes: Routes = [
   { path: '', redirectTo: 'form', pathMatch: 'full' },
-  { path: 'form', loadChildren: './form-module/form.module#FormModule', data: {preload: true} },
+  { path: 'form', loadChildren: './period-form-module/period-form.module#PeriodFormModule', data: { preload: true } },
   { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 
@@ -23,4 +23,3 @@ const routes: Routes = [
   providers: [AppCustomPreloader]
 })
 export class AppRoutingModule { }
-
