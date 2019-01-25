@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   template: '<div class="App"><router-outlet></router-outlet></div>',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'aimc-test';
-}
+export class AppComponent {}

@@ -19,7 +19,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     preloadingStrategy: AppCustomPreloader
   })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AppCustomPreloader]
 })
 export class AppRoutingModule { }
 
