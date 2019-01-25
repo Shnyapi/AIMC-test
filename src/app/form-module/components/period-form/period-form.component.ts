@@ -4,6 +4,7 @@ import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-mo
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { cloneDeep } from 'lodash';
 import * as moment from 'moment';
+import { Moment } from 'moment';
 
 /** Интерфейс периода */
 interface IPeriod {
@@ -22,7 +23,7 @@ interface IPeriod {
 })
 export class PeriodFormComponent implements OnInit {
   /** Минимальная дата сегодняшнее число */
-  public minDate: moment.Moment = moment();
+  public minDate: Moment = moment();
 
   /** Массив периодов */
   public periods: IPeriod[] = [
@@ -49,7 +50,7 @@ export class PeriodFormComponent implements OnInit {
   }
 
   /** Инициализация реактивной формы */
-  private initReactiveForm(): void {
+  private initReactiveForm() {
     /** Генерируем группу реактивной формы */
     this.reactiveForm = this.fb.group({
       startDate: [moment(), Validators.required],                      // Дата начала
@@ -68,7 +69,7 @@ export class PeriodFormComponent implements OnInit {
   }
 
   /** Изменяем endDate */
-  private setEndDate(): void {
+  private setEndDate() {
     const startDate = this.reactiveForm.get('startDate').value;
     const period = this.reactiveForm.get('period').value;
 
