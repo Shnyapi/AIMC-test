@@ -1,4 +1,4 @@
-import { RouterModule, Routes, PreloadingStrategy, Route, PreloadAllModules } from '@angular/router';
+import { RouterModule, Routes, PreloadingStrategy, Route } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
